@@ -1,0 +1,361 @@
+<h2>Площадь помещения:</h2>
+
+<div class="area-of-the-room">
+    <div class="range-container">
+        <input type="range" min="1" max="200" value="50" class="slider-range" id="myRange">
+        <div class="range-values-numbers">
+            <div class="range-value-left">от 0</div>
+            <div class="range-value-right">до 200</div>
+        </div>
+
+    </div>
+  <div class="range-value"><span id="sliderRangeValue"></span> м2</div>
+  <p>Площадь более 200 м2 обговаривается индивидуально</p>
+</div>
+
+<div class="tariffs-by-range">
+    <div class="tariffs-by-range__in">
+        <div class="tariffs-by-range__item">
+            <div class="tariffs-by-range__title">Генеральная</div>
+            <div class="tariffs-by-range__price">от <span class="general-price">7400</span> ₽</div>
+            <!-- <div class="tariffs-by-range__button">Заказать</div> -->
+            <span class="btn btn-default animate-load tariffs-by-range__button" data-event="jqm" data-param-id="5" data-name="order_services" data-autoload-service="Уборка для физ лиц Генеральная" data-autoload-study="Уничтожение клопов" data-autoload-project="Уничтожение клопов">Заказать</span>
+        </div>
+        <div class="tariffs-by-range__item">
+            <div class="tariffs-by-range__title">Генеральная ВИП</div>
+            <div class="tariffs-by-range__price">от <span class="general-vip-price">9900</span> ₽</div>
+            <span class="btn btn-default animate-load tariffs-by-range__button" data-event="jqm" data-param-id="5" data-name="order_services" data-autoload-service="Уборка для физ лиц Генеральная ВИП" data-autoload-study="Уничтожение клопов" data-autoload-project="Уничтожение клопов">Заказать</span>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        if(document.getElementById("sliderRangeValue")) {
+
+            let slider = document.getElementById("myRange");
+            let output = document.getElementById("sliderRangeValue");
+            output.innerHTML = slider.value; 
+            let generalPrice = document.querySelector(".general-price");
+            let generalVipPrice = document.querySelector(".general-vip-price");
+            slider.oninput = function() {
+                output.innerHTML = this.value;
+                // console.log(this.value);
+
+                let code = this.value;
+                // console.log(code);
+                
+                switch(true) {
+                        case code < 30:
+                            generalPrice.innerHTML = 5000;
+                            break;
+                        case code < 35:
+                            generalPrice.innerHTML = 5500;
+                            break;
+                        case code < 40:
+                            generalPrice.innerHTML = 5800;
+                            break;
+                        case code < 45:
+                            generalPrice.innerHTML = 6000;
+                            break;
+                        case code < 50:
+                            generalPrice.innerHTML = 6705;
+                            break;
+                        case code < 55:
+                            generalPrice.innerHTML = 7400;
+                            break;
+                        case code < 60:
+                            generalPrice.innerHTML = 8085;
+                            break;
+                        case code < 65:
+                            generalPrice.innerHTML = 8760;
+                            break;
+                        case code < 70:
+                            generalPrice.innerHTML = 9425;
+                            break;
+                        case code < 75:
+                            generalPrice.innerHTML = 10080;
+                            break;
+                        case code < 80:
+                            generalPrice.innerHTML = 10725;
+                            break;
+                        case code < 85:
+                            generalPrice.innerHTML = 11360;
+                            break;
+                        case code < 90:
+                            generalPrice.innerHTML = 11985;
+                            break;
+                        case code < 95:
+                            generalPrice.innerHTML = 12600;
+                            break;
+                        case code <100:
+                            generalPrice.innerHTML = 13205;
+                            break;
+                        case code < 130:
+                            generalPrice.innerHTML = 13800;
+                            break;
+                        case code < 140:
+                            generalPrice.innerHTML = 17160;
+                            break;
+                        case code < 150:
+                            generalPrice.innerHTML = 18200;
+                            break;
+
+                        case code < 160:
+                            generalPrice.innerHTML = 19200;
+                            break;
+                        case code < 170:
+                            generalPrice.innerHTML = 20160;
+                            break;
+                        case code < 180:
+                            generalPrice.innerHTML = 21080;
+                            break;
+                        case code < 190:
+                            generalPrice.innerHTML = 21960;
+                            break;
+                        case code < 200:
+                            generalPrice.innerHTML = 22800;
+                            break;
+                        case code == 200:
+                            generalPrice.innerHTML = 23600;
+                            break;
+                            
+                }
+
+                switch(true) {
+                        case code < 30:
+                            generalVipPrice.innerHTML = 6500;
+                            break;
+                        case code < 35:
+                            generalVipPrice.innerHTML = 7000;
+                            break;
+                        case code < 40:
+                            generalVipPrice.innerHTML = 7500;
+                            break;
+                        case code < 45:
+                            generalVipPrice.innerHTML = 8000;
+                            break;
+                        case code < 50:
+                            generalVipPrice.innerHTML = 8950;
+                            break;
+                        case code < 55:
+                            generalVipPrice.innerHTML = 9900;
+                            break;
+                        case code < 60:
+                            generalVipPrice.innerHTML = 10835;
+                            break;
+                        case code < 65:
+                            generalVipPrice.innerHTML = 11760;
+                            break;
+                        case code < 70:
+                            generalVipPrice.innerHTML = 12675;
+                            break;
+                        case code < 75:
+                            generalVipPrice.innerHTML = 13580;
+                            break;
+                        case code < 80:
+                            generalVipPrice.innerHTML = 14475;
+                            break;
+                        case code < 85:
+                            generalVipPrice.innerHTML = 15360;
+                            break;
+                        case code < 90:
+                            generalVipPrice.innerHTML = 16235;
+                            break;
+                        case code < 95:
+                            generalVipPrice.innerHTML = 17100;
+                            break;
+                        case code < 100:
+                            generalVipPrice.innerHTML = 17955;
+                            break;
+                        case code < 130:
+                            generalVipPrice.innerHTML = 18300;
+                            break;
+                        case code < 140:
+                            generalVipPrice.innerHTML = 21450;
+                            break;
+                        case code < 150:
+                            generalVipPrice.innerHTML = 22400;
+                            break;
+
+                        case code < 160:
+                            generalVipPrice.innerHTML = 23250;
+                            break;
+                        case code < 170:
+                            generalVipPrice.innerHTML = 24000;
+                            break;
+                        case code < 180:
+                            generalVipPrice.innerHTML = 24650;
+                            break;
+                        case code < 190:
+                            generalVipPrice.innerHTML = 25200;
+                            break;
+                        case code <200:
+                            generalVipPrice.innerHTML = 25650;
+                            break;
+                        case code == 200:
+                            generalVipPrice.innerHTML = 26000;
+                            break;
+                            
+                }
+            }
+        }
+
+    });
+</script>
+
+
+<style>
+    .slider-range {
+    -webkit-appearance: none;
+    width: 100%;
+    max-width: 447px;
+    height: 4px;
+    border-radius: 10px;  
+    background: rgb(45%, 65%, 16%, 0.2);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+
+.slider-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%; 
+    background: #72A62A;
+    cursor: pointer;
+}
+
+.slider-range::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    /* background: #4CAF50; */
+    background: blue;
+    cursor: pointer;
+    /* opacity: 0.2; */
+}
+
+.area-of-the-room {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+.range-value {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+    color: #AEAEAE;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+.range-value span {
+    display: block;
+    border-radius: 2px;
+    border: 1px solid #72A62A;
+    padding: 10px 20px;
+    color: #333;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.area-of-the-room p {
+    color: #333;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-left: 27px;
+    margin-top: 0;
+}
+.range-container {
+    width: 100%;
+    max-width: 447px;
+}
+.range-values-numbers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    color: #AEAEAE;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.tariffs-by-range {
+    margin-top: 30px;
+}
+.tariffs-by-range__in {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.tariffs-by-range__item {
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border-radius: 4px;
+    border: 1px solid #D6D6D6;
+    background: #FFF;
+    max-width: 208px;
+    width: 100%;
+}
+.tariffs-by-range__title {
+    color: #333;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.tariffs-by-range__price {
+    color: #000;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+}
+.tariffs-by-range__button {
+    background: #72A62A;
+    border-radius: 6px;
+    padding: 12px 30px;
+    color: #fff;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media all and (max-width: 900px) {
+    .area-of-the-room {
+        flex-wrap: wrap;
+    }
+    .area-of-the-room p {
+        margin: 0;
+        width: 100%;
+    }
+}
+@media all and (max-width: 460px) {
+ .tariffs-by-range__in {
+    flex-direction: column;
+ }
+ .tariffs-by-range__item {
+    max-width: 100%;
+ }
+}
+</style>
